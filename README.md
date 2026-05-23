@@ -247,7 +247,7 @@ https://stellar.expert/explorer/testnet/contract/<CONTRACT_ID>
 ## 👤 Author
 
 **[XDAQWE]**
-- GitHub: [@username](https://github.com/xdaqwe)
+- GitHub: [@xdaqwe](https://github.com/xdaqwe)
 - Stellar Public Key: `GXXXXXXX...`
 
 ---
