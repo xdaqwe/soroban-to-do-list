@@ -97,8 +97,8 @@ Or use the [Stellar Laboratory](https://laboratory.stellar.org/#account-creator?
 | Info | Detail |
 |---|---|
 | Network | Stellar Testnet |
-| Contract ID | `CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` |
-| Deployed by | `GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` |
+| Contract ID | `CBUCTRWPHD3QSJIOODLZ4XXUD6ZSZJVYYFSQQWGGYMQ6GPWWC737BDRP` |
+| Deployed by | `XDAQWE` |
 
 > Replace the table above with your actual Contract ID and Public Key after deploying!
 
