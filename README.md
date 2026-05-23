@@ -1,117 +1,117 @@
 # 📝 OnChain Todos — Stellar Soroban dApp
 
-Aplikasi To-Do List berbasis blockchain yang dibangun di atas **Stellar Network** menggunakan **Soroban Smart Contract**. Setiap task yang ditambahkan, diselesaikan, atau dihapus tersimpan langsung on-chain secara transparan dan tidak bisa dimanipulasi.
+A blockchain-based To-Do List application built on the **Stellar Network** using **Soroban Smart Contracts**. Every task you add, complete, or delete is stored directly on-chain — transparent and tamper-proof.
 
-> 🎓 Dibuat sebagai tugas akhir program **Stellar RiseIn Bootcamp**
+> 🎓 Built as a final project for the **Stellar RiseIn Bootcamp**
 
 ---
 
-## 🌟 Fitur
+## 🌟 Features
 
-- ✅ **Tambah task** — tersimpan permanen di blockchain
-- ✅ **Toggle selesai** — tandai task selesai/belum selesai
-- ✅ **Hapus task** — remove task dari on-chain storage
-- ✅ **Connect wallet** — integrasi dengan Freighter Wallet
-- ✅ **Stats real-time** — total, selesai, dan pending tasks
-- ✅ **Per-user storage** — setiap wallet punya data task sendiri
+- ✅ **Add tasks** — stored permanently on the blockchain
+- ✅ **Toggle complete** — mark tasks as done or undone
+- ✅ **Delete tasks** — remove tasks from on-chain storage
+- ✅ **Wallet connect** — integrated with Freighter Wallet
+- ✅ **Real-time stats** — total, completed, and pending tasks
+- ✅ **Per-user storage** — each wallet has its own task data
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Teknologi |
+| Layer | Technology |
 |---|---|
 | Smart Contract | Rust + Soroban SDK |
 | Network | Stellar Testnet |
 | Frontend | HTML, CSS, Vanilla JS |
 | Wallet | Freighter Browser Extension |
 | SDK | stellar-base (CDN) |
-| Deploy Contract | Soroban Studio |
+| Contract Deploy | Soroban Studio |
 
 ---
 
-## 📁 Struktur Project
+## 📁 Project Structure
 
 ```
 todo-dapp/
 ├── contract/
 │   └── src/
-│       └── lib.rs        # Smart contract Soroban (Rust)
+│       └── lib.rs        # Soroban smart contract (Rust)
 │   └── Cargo.toml        # Rust dependencies
 ├── frontend/
-│   └── index.html        # Frontend lengkap (HTML + CSS + JS)
+│   └── index.html        # Full frontend (HTML + CSS + JS)
 └── README.md
 ```
 
 ---
 
-## ⚙️ Cara Deploy & Menjalankan
+## ⚙️ Setup & Running the App
 
-### Prasyarat
+### Prerequisites
 
-Sebelum mulai, pastikan sudah punya:
+Make sure you have the following ready:
 
-- [ ] Browser (Chrome / Brave / Firefox)
-- [ ] Ekstensi **Freighter Wallet** → [freighter.app](https://freighter.app)
-- [ ] Akun Freighter sudah di-set ke **Testnet**
-- [ ] XLM Testnet (gratis via Friendbot)
-
----
-
-### Step 1 — Deploy Smart Contract di Soroban Studio
-
-1. Buka [soroban.studio](https://soroban.studio)
-2. Buat project baru
-3. Copy-paste isi file `contract/src/lib.rs` ke editor
-4. Klik **Build** — tunggu sampai berhasil compile
-5. Klik **Deploy to Testnet**
-6. Setelah deploy berhasil, **copy Contract ID** yang muncul
-
-> ⚠️ Simpan Contract ID ini, nanti dipakai di frontend!
+- [ ] A browser (Chrome / Brave / Firefox)
+- [ ] **Freighter Wallet** extension → [freighter.app](https://freighter.app)
+- [ ] Freighter account set to **Testnet**
+- [ ] Testnet XLM (free via Friendbot)
 
 ---
 
-### Step 2 — Dapatkan XLM Testnet Gratis
+### Step 1 — Deploy Smart Contract on Soroban Studio
 
-Buka link berikut di browser (ganti `<PUBLIC_KEY>` dengan public key Freighter kamu):
+1. Open [soroban.studio](https://soroban.studio)
+2. Create a new project
+3. Copy and paste the contents of `contract/src/lib.rs` into the editor
+4. Click **Build** — wait until it compiles successfully
+5. Click **Deploy to Testnet**
+6. Once deployed, **copy the Contract ID** that appears
+
+> ⚠️ Save this Contract ID — you'll need it for the frontend!
+
+---
+
+### Step 2 — Get Free Testnet XLM
+
+Open the following URL in your browser (replace `<PUBLIC_KEY>` with your Freighter public key):
 
 ```
 https://friendbot.stellar.org?addr=<PUBLIC_KEY>
 ```
 
-Atau bisa lewat [Stellar Laboratory](https://laboratory.stellar.org/#account-creator?network=test)
+Or use the [Stellar Laboratory](https://laboratory.stellar.org/#account-creator?network=test)
 
 ---
 
-### Step 3 — Jalankan Frontend
+### Step 3 — Run the Frontend
 
-1. Buka file `frontend/index.html` langsung di browser (double-click)
-2. Klik tombol **Connect Freighter** → approve di popup Freighter
-3. Paste **Contract ID** dari Step 1 ke kolom yang tersedia
-4. Mulai tambah task! 🎉
+1. Open `frontend/index.html` directly in your browser (double-click the file)
+2. Click **Connect Freighter** → approve in the Freighter popup
+3. Paste the **Contract ID** from Step 1 into the input field
+4. Start adding tasks! 🎉
 
 ---
 
-## 🔗 Contract yang Sudah Di-deploy
+## 🔗 Deployed Contract
 
 | Info | Detail |
 |---|---|
 | Network | Stellar Testnet |
 | Contract ID | `CXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` |
-| Deploy oleh | `GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` |
+| Deployed by | `GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX` |
 
-> Ganti tabel di atas dengan Contract ID dan Public Key kamu setelah deploy!
+> Replace the table above with your actual Contract ID and Public Key after deploying!
 
 ---
 
-## 📐 Arsitektur Aplikasi
+## 📐 Application Architecture
 
 ```
 User (Browser)
      │
      │  Connect Wallet
      ▼
-Freighter Wallet ──── sign transaksi
+Freighter Wallet ──── sign transaction
      │
      │  XDR Transaction
      ▼
@@ -129,31 +129,31 @@ Smart Contract (on-chain)
      │
      │  result
      ▼
-Frontend Update UI
+Frontend updates UI
 ```
 
 ---
 
-## 📜 Fungsi Smart Contract
+## 📜 Smart Contract Functions
 
 ```rust
-// Tambah task baru
+// Add a new task
 add_task(env, user: Address, title: String) -> u32
 
-// Ambil semua tasks milik user
+// Get all tasks for a user
 get_tasks(env, user: Address) -> Vec<Task>
 
-// Toggle task selesai / belum
+// Toggle task complete / incomplete
 complete_task(env, user: Address, task_id: u32) -> bool
 
-// Hapus task
+// Delete a task
 delete_task(env, user: Address, task_id: u32) -> bool
 
-// Hapus semua tasks
+// Clear all tasks
 clear_tasks(env, user: Address)
 ```
 
-### Struktur Data Task
+### Task Data Structure
 
 ```rust
 pub struct Task {
@@ -165,30 +165,30 @@ pub struct Task {
 
 ---
 
-## 🧪 Menjalankan Tests
+## 🧪 Running Tests Locally
 
-Jika ingin menjalankan unit test contract secara lokal:
+If you want to run the contract unit tests locally:
 
 ```bash
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Tambah target WASM
+# Add WASM target
 rustup target add wasm32-unknown-unknown
 
 # Install Soroban CLI
 cargo install --locked soroban-cli
 
-# Masuk ke folder contract
+# Go to the contract folder
 cd contract
 
-# Jalankan tests
+# Run tests
 cargo test
 ```
 
 ---
 
-## 🖼️ Tampilan Aplikasi
+## 🖼️ App Preview
 
 ```
 ┌─────────────────────────────────────┐
@@ -201,25 +201,25 @@ cargo test
 │  ● G1234...5678    [✅ Connected]   │
 │  CONTRACT ID: [CXXX...XXX_______]   │
 │  ─────────────────────────────────  │
-│  [Tulis task baru...      ] [+ Add] │
+│  [Write a new task...     ] [+ Add] │
 │                                     │
 │  — TASKS ON-CHAIN                   │
 │  ┌───────────────────────────────┐  │
-│  │ #01  Belajar Soroban      ○ 🗑│  │
+│  │ #01  Learn Soroban        ○ 🗑│  │
 │  │ #02  Deploy contract     ✅ 🗑│  │
-│  │ #03  Submit tugas         ○ 🗑│  │
+│  │ #03  Submit assignment    ○ 🗑│  │
 │  └───────────────────────────────┘  │
 │                                     │
 │  [  3  ]   [  1  ]   [  2  ]       │
-│   Total     Selesai   Pending       │
+│   Total    Done      Pending        │
 └─────────────────────────────────────┘
 ```
 
 ---
 
-## 🔍 Cara Verifikasi Transaksi
+## 🔍 Verifying Transactions
 
-Setiap aksi di app menghasilkan transaksi on-chain yang bisa dicek di:
+Every action in the app creates an on-chain transaction. You can verify it at:
 
 **Stellar Explorer (Testnet):**
 ```
@@ -230,32 +230,32 @@ https://stellar.expert/explorer/testnet/contract/<CONTRACT_ID>
 
 ## ❓ Troubleshooting
 
-**Freighter tidak terdeteksi**
-→ Pastikan ekstensi Freighter sudah terinstall dan aktif di browser
+**Freighter not detected**
+→ Make sure the Freighter extension is installed and enabled in your browser
 
-**"Contract ID belum diisi"**
-→ Paste Contract ID dari Soroban Studio ke kolom yang tersedia
+**"Contract ID not filled"**
+→ Paste the Contract ID from Soroban Studio into the input field
 
-**Transaksi gagal / timeout**
-→ Pastikan saldo XLM Testnet cukup (minimal 1 XLM), gunakan Friendbot jika habis
+**Transaction failed / timeout**
+→ Make sure your Testnet XLM balance is sufficient (at least 1 XLM); use Friendbot to top up
 
-**Task tidak muncul setelah ditambah**
-→ Tunggu beberapa detik, transaksi on-chain butuh waktu konfirmasi
+**Tasks not showing after adding**
+→ Wait a few seconds — on-chain transactions need time to confirm
 
 ---
 
 ## 👤 Author
 
-**[Nama Kamu]**
-- GitHub: [@username](https://github.com/username)
+**[XDAQWE]**
+- GitHub: [@username](https://github.com/xdaqwe)
 - Stellar Public Key: `GXXXXXXX...`
 
 ---
 
-## 📄 Lisensi
+## 📄 License
 
-MIT License — bebas digunakan untuk keperluan belajar.
+MIT License — free to use for learning purposes.
 
 ---
 
-> Dibuat dengan ❤️ selama program **Stellar RiseIn Bootcamp**
+> Built with ❤️ during the **Stellar RiseIn Bootcamp**
